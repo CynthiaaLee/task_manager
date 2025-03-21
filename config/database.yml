@@ -102,8 +102,12 @@ production:
   database: task_manager_production
   pool: 5
   timeout: 5000
-  host: <%= ENV['DATABASE_URL'] %> # 重要，Heroku 需要用 DATABASE_URL
+  host: <%= ENV['DATABASE_URL'] %> # Heroku 需要这个
+
+queue:
+  adapter: postgresql
+  url: <%= ENV['DATABASE_URL'] %> # Solid Queue 需要数据库
 
 cable:
   adapter: postgresql
-  url: <%= ENV['DATABASE_URL'] %> # Action Cable 需要这个
+  url: <%= ENV['DATABASE_URL'] %> # Action Cable 需要数据库
