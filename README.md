@@ -89,35 +89,3 @@ rails db:seed
 rails server
 ```
 Visit **http://localhost:3000** in your browser.
-
----
-
-## **🚀 Deployment on Heroku**
-### **🔹 1. Create a Heroku App**
-```sh
-heroku login
-heroku create task-manager-phase1
-```
-
-### **🔹 2. Set Up PostgreSQL**
-```sh
-heroku addons:create heroku-postgresql:hobby-dev
-```
-
-### **🔹 3. Deploy to Heroku**
-```sh
-git add .
-git commit -m "Deploy to Heroku"
-git push heroku main
-```
-
-### **🔹 4. Run Database Migrations**
-```sh
-heroku run rails db:migrate
-heroku run rails db:seed
-```
-
-### **🔹 5. Open the App**
-```sh
-heroku open
-```
